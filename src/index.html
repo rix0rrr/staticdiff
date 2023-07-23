@@ -4,10 +4,39 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="styles.css" rel="stylesheet">
+  <link rel="stylesheet" href="fontawesome/css/fontawesome.min.css">
+  <link rel="stylesheet" href="fontawesome/css/solid.min.css">
+  <link rel="stylesheet" href="fontawesome/css/regular.min.css">
+  <title>StaticDiff</title>
 </head>
 <body>
-  <h1 class="text-3xl font-bold underline">
-    Hello world!
-  </h1>
+  <div class="flex flex-col h-screen overflow-clip">
+    <!-- Header -->
+    <header
+      class="flex-0 bg-indigo-100 px-4 py-1 border-b-4 border-indigo-300 flex items-center gap-4"
+      style="height: 3rem">
+
+      <div class="text-xl w-48 font-extralight">Static<span class="font-bold text-pink-600">Diff</span></div>
+      <div>
+        Comparing <span id="lname" class="font-bold text-blue-500">left</span> and <span id="rname" class="font-bold text-blue-500">right</span>
+      </div>
+    </header>
+    <!-- The rest -->
+    <div class="flex" style="height: calc(100% - 3rem)">
+      <!-- Explorer pane -->
+      <div class="flex-0 h-full overflow-y-auto w-48 py-2 px-4">
+        <div class="text-sm font-light mb-2 border-b-2 border-pink-300">Files</div>
+        <div id="explorer"></div>
+      </div>
+      <!-- Content pane -->
+      <div class="flex-1 overflow-y-auto">
+        <!-- Error -->
+        <div class="hidden box-red flashbox" id="error-message"></div>
+        <!-- Diffs -->
+        <div id="difflist" class="h-full pt-2"></div>
+      </div>
+    </div>
+  </div>
+  <script src="app.js"></script>
 </body>
 </html>

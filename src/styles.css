@@ -1,3 +1,42 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.icon {
+  @apply w-6;
+  display: inline-flex;
+  vertical-align: middle;
+}
+
+/* File */
+
+.entry {
+  @apply px-1 mt-1;
+  display: block;
+}
+
+.clickable:hover {
+  @apply bg-blue-300;
+  cursor: pointer;
+}
+
+@keyframes bump {
+  from {
+      transform: scale(1);
+  }
+  to {
+      transform: scale(1.02);
+  }
+}
+
+.flashbox {
+  @apply border-2 m-2 px-4 py-2;
+}
+
+.box-red {
+  @apply bg-red-200 border-red-400;
+}
+
+.box-blue {
+  @apply bg-blue-200 border-blue-400;
+}
