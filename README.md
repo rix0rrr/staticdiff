@@ -81,6 +81,7 @@ The diff viewer accepts the following parameters, passed in the hash fragment
 of the URL:
 
 | Argument | Meaning | Default |
+|----------|---------|---------|
 | `l`, `r` | Directories of the left and right file sets | (required) |
 | `lname`, `rname` | Symbolic names of the left and right file sets | Directory names |
 | `manifest` | Name of the manifest file | `MANIFEST` |
