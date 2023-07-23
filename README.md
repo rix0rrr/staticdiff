@@ -6,13 +6,13 @@ Compare sets of files using only static file hosting: diffing happens in the bro
 
 Ever have the need to diff some sets of files (for example, inspect a diff on
 some set of files that are generated during a GitHub build) ? And don't want to
-run server side software to do the diffing? 
+run server side software to do the diffing?
 
 This tool is for you! All you need is some static file hosting like GitHub Pages
 or S3, drop some files on there, and generate a hyperlink to tell the diff viewer
 where to look.
 
-### When not to use 
+### When not to use
 
 A downside of this method is that the time taken is going to be proportional to
 the size of the files; if there are large files with few differences, this
@@ -30,11 +30,11 @@ To use, you need to do three things:
 
 ### Drop the diff viewer on some static file hosting
 
-Download one of the StaticDiff releases, and put it somewhere on static file hosting.
-Technically, the diff viewer could live on a different host, but then you would need 
+Download one of the StaticDiff [releases](https://github.com/rix0rrr/staticdiff/releases), and put it somewhere on
+static file hosting.  Technically, the diff viewer could live on a different host, but then you would need
 to fiddle with CORS, and who has time to learn how that works?
 
-For the purposes of this walkthrough, we'll assume you dropped it on 
+For the purposes of this walkthrough, we'll assume you dropped it on
 `http://example.com/diff/`.
 
 ### Prepare a file set
@@ -43,7 +43,7 @@ The diff viewer needs a `MANIFEST` file indicating every file of the fileset, an
 its content hash. It doesn't matter what the hash algorithm is, as long as its consistent
 between filesets.
 
-Here's a way to generate this manifest file (assuming you want to include all files 
+Here's a way to generate this manifest file (assuming you want to include all files
 into the diff):
 
 ```
@@ -80,7 +80,7 @@ sets and perform and render a diff in the browser.
 The diff viewer accepts the following parameters, passed in the hash fragment
 of the URL:
 
-| Argument | Meaning | Default | 
+| Argument | Meaning | Default |
 | `l`, `r` | Directories of the left and right file sets | (required) |
 | `lname`, `rname` | Symbolic names of the left and right file sets | Directory names |
 | `manifest` | Name of the manifest file | `MANIFEST` |
